@@ -19,52 +19,52 @@
 
 - 1. Clone the repository:
 
-   ```bash
-   git clone https://github.com/pranjalpruthi/Streamlit-FastAPI.git
-  ```
+```bash
+git clone https://github.com/hunterzhang86/Streamlit-FastAPI.git
+```
 
 
 - Navigate to the project directory:
 
-  ```python
-    cd Streamlit-FastAPI
-  ```
+```python
+cd Streamlit-FastAPI
+```
 
   Create a new Python virtual environment, or use conda/mamba to create a new environment:
 
 - Python Virtual Environment:
 
-  ```python
-    python -m venv apidemo
-   source apidemo/bin/activate
-  ```
+```python
+python -m venv apidemo
+source apidemo/bin/activate
+```
 
 - Conda:
 
-  ```python
-      conda create -n apidemo python=3.10
-      conda activate apidemo
-  ```
+```python
+conda create -n apidemo python=3.10
+conda activate apidemo
+```
 
 - Mamba:
 
-  ```python
-     mamba create -n apidemo
-      mamba activate apidemo
-  ```
+```python
+mamba create -n apidemo
+mamba activate apidemo
+```
 
 
 - Install the required dependencies:
 
 ```python
-  pip install -r requirements.txt
-  ```
+pip install -r requirements.txt
+```
 ## Running the Backend
 ### Start the FastAPI backend server:
 
-  ```bash
-   uvicorn main:app --reload
-  ```
+```bash
+uvicorn app.main:app --reload
+```
 
 The backend server will be running at http://localhost:8000/docs# 🚀.
 
@@ -83,16 +83,15 @@ Open your browser and visit http://localhost:8000/docs 📚. You will find the i
 
 - Navigate to the project directory (if not already there):
 
-  ```bash
-  cd Streamlit-FastAPI
-  ```
+```bash
+cd Streamlit-FastAPI
+```
 
 - Start the Streamlit app:
 
-
 ```bash
-   streamlit run app.py
-  ```
+streamlit run app/app.py
+```
 
 ## Access the Streamlit app:
 
@@ -104,16 +103,25 @@ Open your browser and visit http://localhost:8501 🌐. You will see the Streaml
 # Streamlit App Snip
 ![CleanShot 2023-07-18 at 18 10 01@2x](https://github.com/pranjalpruthi/apidemo/assets/47497714/25ed66d4-2908-4868-a522-e8d20440c19c)
 
+# Deployment
+```bash
+docker build -t streamlit-app . -f streamlit.Dockerfile
+docker build -t fastapi-app . -f fastapi.Dockerfile
+
+docker run -d --name streamlit-container -p 8080:8080 streamlit-app
+docker run -d --name fastapi-container -p 8000:8000 fastapi-app
+```
+
 
 # Uninstall/Remove Enviorments
-     deactivate  # deactivate the virtual environment
-     rm -rf /path/to/apidemo  # delete the directory
+```bash
+deactivate  # deactivate the virtual environment
+rm -rf /path/to/apidemo  # delete the directory
 
-     conda env remove --name apidemo
+conda env remove --name apidemo
 
-     mamba env remove --name apidemo
-
-
+mamba env remove --name apidemo
+```
 
 ## Contributing
 We welcome contributions from the community! If you find any issues or have suggestions for improvement, please open an issue or submit a pull request on GitHub.
