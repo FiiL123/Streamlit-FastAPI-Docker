@@ -74,28 +74,6 @@ Open your browser and visit http://localhost:8000/docs 📚. You will find the i
 ![CleanShot 2023-07-18 at 18 05 03@2x](https://github.com/pranjalpruthi/apidemo/assets/47497714/f5f9d329-b486-44e3-985d-146b87cf25b5)
 
 
-## Running the Streamlit Frontend
-### Open a new terminal session.
-
-- Navigate to the project directory (if not already there):
-
-```bash
-cd Streamlit-FastAPI
-```
-
-- Start the Streamlit app:
-
-```bash
-streamlit run app/app.py
-```
-
-## Access the Streamlit app:
-
-Open your browser and visit http://localhost:8501 🌐. You will see the Streamlit app interface, where you can interact with the API and visualize the data.
-
-[(go to streamlit ui at localhost:8501](http://localhost:8501))
-
-
 # Deployment
 ```bash
 docker compose up --build
