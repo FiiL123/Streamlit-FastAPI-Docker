@@ -1,0 +1,28 @@
+version: "3.4"
+
+services:
+    streamlit-web:
+        build:
+          context: .
+          dockerfile: streamlit.Dockerfile
+        ports:
+          - "8011:8080"
+        volumes:
+          - ./:/app/
+        networks:
+          - streamlit-network
+
+    streamlit-api:
+        build:
+          context: .
+          dockerfile: fastapi.Dockerfile
+        ports:
+          - "8010:8000"
+        volumes:
+          - ./:/app/
+        networks:
+          - streamlit-network
+
+networks:
+    streamlit-network:
+

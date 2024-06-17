@@ -2,7 +2,9 @@ import streamlit as st
 import requests
 
 # Backend API URL
-API_URL = "http://localhost:8000"
+#API_URL = "http://streamlit-fastapi-streamlit-api-1:8010"
+#API_URL = "http://172.26.0.2:8010"
+API_URL = "http://streamlit-api:8000"
 
 st.title("Stock Price App")
 
