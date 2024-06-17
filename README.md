@@ -1,9 +1,5 @@
 
-# Building a Streamlit boilerplate with Streamlit, SQLite DB, and REST API.
-
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/minimal)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/minimal/devcontainer.json)
+# Building a Streamlit boilerplate with Streamlit, SQLite DB, and REST API. Deploy with docker.
 
 ## 🚀 Project Structure
 
@@ -100,18 +96,14 @@ Open your browser and visit http://localhost:8501 🌐. You will see the Streaml
 [(go to streamlit ui at localhost:8501](http://localhost:8501))
 
 
-# Streamlit App Snip
-![CleanShot 2023-07-18 at 18 10 01@2x](https://github.com/pranjalpruthi/apidemo/assets/47497714/25ed66d4-2908-4868-a522-e8d20440c19c)
-
 # Deployment
 ```bash
-docker build -t streamlit-app . -f streamlit.Dockerfile
-docker build -t fastapi-app . -f fastapi.Dockerfile
-
-docker run -d --name streamlit-container -p 8080:8080 streamlit-app
-docker run -d --name fastapi-container -p 8000:8000 fastapi-app
+docker compose up --build
 ```
+When deploying with docker compose the services are on ports:
 
+*  http://localhost:8011 - API
+*  http://localhost:8010 - WEB
 
 # Uninstall/Remove Enviorments
 ```bash
